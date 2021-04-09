@@ -23,7 +23,6 @@ clock = pygame.time.Clock()
 catHit = pygame.mixer.Sound('./python02/cat_meow_x.wav')
 
 music = pygame.mixer.music.load('./python02/game-theme.wav')
-pygame.mixer.music.play(-1)
 
 my_score = 0
 
@@ -242,6 +241,14 @@ while run:
     else:
         ox.standing = True
         ox.walkCount = 0
+        if keys[pygame.K_m]:
+            pygame.mixer.music.play(-1)
+        elif keys[pygame.K_q]:
+            pygame.mixer.music.stop()
+        elif keys[pygame.K_r] and ox.standing:
+            cat.health = 24
+            cat.visible = True
+
     if not(ox.isJump):
         if keys[pygame.K_UP]:
             ox.isJump = True
