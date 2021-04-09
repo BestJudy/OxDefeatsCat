@@ -65,12 +65,12 @@ class player(object):
     def hit(self):
         self.isJump = False
         self.jumpCount = 10
-        self.x = 10
-        self.y = 750
+        self.x = 100
+        self.y = 410
         self.walkCount = 0
         font1 = pygame.font.SysFont('comicsans', 100)
-        text = font1.render(-10, 1, (255,0,0))
-        win.blit(text, (800 - (text.get_width()/2),800))
+        text = font1.render('-5', 1, (255,0,0))
+        win.blit(text, (250 - (text.get_width()/2),200))
         pygame.display.update()
         i = 0
         while i < 300:
@@ -143,7 +143,7 @@ class enemy(object):
             self.health -= 1
         else:
             self.visible = False
-        print('Enemies HITTED')
+        #print('Enemies HITTED')
 
 
 
